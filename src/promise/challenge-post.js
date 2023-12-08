@@ -6,7 +6,7 @@ function postData(urlApi, data) {
         method: 'POST',
         mode: 'cors',
         credentials: 'same-origin',
-        headers: {
+        header: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
@@ -15,7 +15,7 @@ function postData(urlApi, data) {
 }
 
 const data = {
-    "title": "309,
+    "title": "New harold",
     "price": 309,
     "description": "A description",
     "categoryId": 1,

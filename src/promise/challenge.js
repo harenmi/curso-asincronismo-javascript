@@ -18,13 +18,17 @@ function fetchData(urlAPI) {
 fetchData(`${API}/products`)
     .then(response => response.json())
     .then(products => {
+        console.log(products);
         return fetchData(`${API}/products/${products[0].id}`)
     })
     .then(response => response.json())
     .then(products => {
+        console.log(products.title);
         return fetchData(`${API}/products/${products.category.id}`)
     })
     .then(response => response.json())
     .then(category => {
         console.log(category.name);
     })
+    .catch(err => console.log(err))
+    .finally(() => console.log('Finally'));
